@@ -53,3 +53,12 @@ armips/asm/trainer_ai.s - ~0x60 bytes of extra code
 
 plus all the c injection stuff.  we are not worried about that here, that is dynamically managed
 */
+
+/* AURORA CRYSTAL: Custom Changes */
+.include "armips/asm/custom/enable_surf_without_knowing_move.s"
+.include "armips/asm/custom/encounter_rates.s"
+.include "armips/asm/custom/mart_items.s"
+.include "armips/asm/custom/rock_climb.s"
+.include "armips/asm/custom/shiny_rate.s"
+.include "armips/asm/custom/smashable_rock_items.s"
+.include "armips/asm/custom/waterfall.s"

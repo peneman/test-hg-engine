@@ -867,8 +867,9 @@
 #define ITEM_WELLSPRING_MASK    (ITEM_PIXIE_PLATE + 213)
 #define ITEM_HEARTHFLAME_MASK   (ITEM_PIXIE_PLATE + 214)
 #define ITEM_METAL_ALLOY        (ITEM_PIXIE_PLATE + 215)
+#define ITEM_INFINITE_CANDY     (ITEM_PIXIE_PLATE + 216)
 
-#define MAX_BASE_ITEM_NUM ITEM_METAL_ALLOY
+#define MAX_BASE_ITEM_NUM ITEM_INFINITE_CANDY
 
 // define your custom move effects below like this
 // #define ITEM_CUSTOM_1 (MAX_BASE_ITEM_NUM + 1)
@@ -884,7 +885,7 @@
 #define NUM_UNKNOWN_SLOTS 22 // used to adjust in data/itemdata.c
 #define NUM_UNKNOWN_SLOTS_EXPLORER_KIT (NUM_UNKNOWN_SLOTS+1) // used to adjust in data/itemdata.c
 
-#define NEW_ITEM_MAX ITEM_METAL_ALLOY
+#define NEW_ITEM_MAX ITEM_INFINITE_CANDY
 
 #define BAG_SLOT_QUANTITY_MAX                    999
 

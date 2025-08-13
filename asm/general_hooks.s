@@ -108,6 +108,7 @@ mov pc, r1
 CanUseItemOnMonInParty_return_address:
 .word 0
 
+
 .global PartyMenu_ItemUseFunc_LevelUpLearnMovesLoop_Case6_hook
 PartyMenu_ItemUseFunc_LevelUpLearnMovesLoop_Case6_hook:
 mov r0, r4
