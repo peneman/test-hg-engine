@@ -1908,4 +1908,7 @@ void LONG_CALL ov12_02263D14(void *bsys, int battlerId, u32 a2, int slot);
 
 void LONG_CALL *SelectPartyMonAndLearnMove(void *taskman, u32 heapId);
 
+BOOL GetMonMachineMoveCompat(struct PartyPokemon *pp, u16 machineMoveIndex);
+
+
 #endif

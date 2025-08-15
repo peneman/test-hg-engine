@@ -18,6 +18,7 @@
 #include "../include/constants/sndseq.h"
 #include "../include/constants/species.h"
 #include "../include/constants/weather_numbers.h"
+#include "../include/constants/generated/learnsets.h"
 
 
 extern u32 word_to_store_form_at;
@@ -2484,4 +2485,29 @@ void LONG_CALL ChangeToBattleForm(struct PartyPokemon *pp) {
     default:
         break;
     }
+}
+
+/**
+ * @brief checks if a given mon can learn a specific TM or HM by index. reads from data/generated/MachineMoveLearnsets.c
+ * @see   pret/pokeheartgold GetMonTMHMCompat
+ */
+BOOL GetMonMachineMoveCompat(struct PartyPokemon *pp, u16 machineMoveIndex) {
+    u32 species = GetMonData(pp, MON_DATA_SPECIES, NULL);
+    u16 form = GetMonData(pp, MON_DATA_FORM, NULL);
+
+    if (species > MAX_SPECIES_INCLUDING_FORMS || machineMoveIndex > NUM_MACHINE_MOVES) {
+        return FALSE;
+    }
+
+    u32 buf[MACHINE_LEARNSETS_BITFIELD_COUNT];
+    ArchiveDataLoadOfs(buf, ARC_CODE_ADDONS, CODE_ADDON_MACHINE_LEARNSETS, PokeOtherFormMonsNoGet(species, form) * MACHINE_LEARNSETS_BITFIELD_COUNT * sizeof(u32), MACHINE_LEARNSETS_BITFIELD_COUNT * sizeof(u32));
+
+    return (buf[machineMoveIndex / 32] >> (machineMoveIndex % 32)) & 1;
+}
+
+/**
+ * @brief loads level up data for a mon. reads from data/generated/LevelupLearnsets.c
+ */
+void LONG_CALL LoadLevelUpLearnset_HandleAlternateForm(int species, int form, u32 *levelUpLearnset) {
+    ArchiveDataLoadOfs(levelUpLearnset, ARC_LEVELUP_LEARNSETS, 0, PokeOtherFormMonsNoGet(species, form) * MAX_LEVELUP_MOVES * sizeof(u32), MAX_LEVELUP_MOVES * sizeof(u32));
 }
