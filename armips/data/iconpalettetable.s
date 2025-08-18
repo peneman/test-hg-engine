@@ -1417,6 +1417,7 @@ gIconPalTable:
 /* SPECIES_URSALUNA_BLOODMOON          */ .byte  0x2
 /* SPECIES_TERAPAGOS_TERASTAL          */ .byte  0x0
 /* SPECIES_TERAPAGOS_STELLAR           */ .byte  0x0
+/* SPECIES_MEGA_CHARIZARD_Z*/ .byte  0x0
 
 .endarea
 

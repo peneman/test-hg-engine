@@ -27681,3 +27681,19 @@ mondata SPECIES_TERAPAGOS_STELLAR, "-----"
     abilities ABILITY_TERAFORM_ZERO, ABILITY_NONE
     runchance 0
     colorflip BODY_COLOR_BLUE, 0
+
+mondata SPECIES_MEGA_CHARIZARD_Z, "-----"
+    basestats 79, 94, 113, 144, 120, 85
+    types TYPE_FIRE, TYPE_FIRE
+    catchrate 45
+    baseexp 209
+    evyields 0, 0, 0, 0, 3, 0
+    items ITEM_NONE, ITEM_NONE
+    genderratio 31
+    eggcycles 20
+    basefriendship 50
+    growthrate GROWTH_MEDIUM_SLOW
+    egggroups EGG_GROUP_MONSTER, EGG_GROUP_DRAGON
+    abilities ABILITY_DRY_SKIN, ABILITY_NONE
+    runchance 0
+    colorflip 0, 0
